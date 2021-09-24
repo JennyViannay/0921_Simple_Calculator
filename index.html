@@ -6,34 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
 <body>
-    <script>
-        const firstValue = prompt("First value");
-        const operator = prompt("Operator");
-        const secondValue = prompt("Second value");
-
-        console.log(firstValue);
-        console.log(operator);
-        console.log(secondValue);
-        
-        function getResult(firstValue, operator, secondValue) {
-            switch (operator) {
-                case "+":
-                    return parseInt(firstValue) + parseInt(secondValue);
-                case "-":
-                    return parseInt(firstValue) - parseInt(secondValue);
-                case "/":
-                    return parseInt(firstValue) / parseInt(secondValue);
-                case "*":
-                    return parseInt(firstValue) * parseInt(secondValue);
-                default :
-                    return "Invalid Operator";
-            }
-        }
-        console.log(getResult(firstValue, operator, secondValue));
-    </script>
+    <div class="container">
+        <h1 id="title">Simple Calculator</h1>
+        <div class="alert alert-danger d-none" id="result"></div>
+        <form>
+            <div class="mb-3">
+                <label for="firstValue" class="form-label">First Value *</label>
+                <input type="text" class="form-control" id="firstValue" placeholder="ex :5" required>
+            </div>
+            <div class="mb-3">
+                <label for="operator">Operator</label>
+                <select class="form-select" aria-label="Default select example" id="operator">
+                    <option selected>Select Operator</option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="secondValue" class="form-label">Second Value *</label>
+                <input type="text" class="form-control" id="secondValue" placeholder="ex :5" required>
+            </div>
+            <input type="submit" value="Calcul" id="submit">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
